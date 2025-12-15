@@ -1,10 +1,10 @@
 {
   "mappings": [
-    "/content/aem-boilerplate/:/",
-    "/content/aem-boilerplate/configuration:/.helix/config.json",
-    "/content/aem-boilerplate/metadata:/metadata.json"
+    "/content/mario-eds-learning/:/",
+    "/content/mario-eds-learning/configuration:/.helix/config.json",
+    "/content/mario-eds-learning/metadata:/metadata.json"
   ],
   "includes": [
-    "/content/aem-boilerplate/"
+    "/content/mario-eds-learning/"
   ]
 }
