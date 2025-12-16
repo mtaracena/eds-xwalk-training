@@ -184,7 +184,7 @@
                 "template": {
                   "name": "Search",
                   "model": "search",
-                  "search": "#"
+                  "source": "#"
                 }
               }
             }
