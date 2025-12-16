@@ -14,3 +14,26 @@ indices:
       robots:
         select: head > meta[name="robots"]
         value: attribute(el, "content")
+  blog:
+    include:
+      - '/blog/**'
+    exclude:
+      - '/**.json'
+    target: /blog-index.json
+    properties:
+      lastModified:
+        select: none
+        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
+      robots:
+        select: head > meta[name="robots"]
+        value: attribute(el, "content")
+      title:
+        select: head > title
+        value: text(el)
+      description:
+        select: head > meta[name="description"]
+        value: attribute(el, "content")
+      image:
+        select: head > meta[property="og:image:secure_url"]
+        value: attribute(el, "content")
+      
