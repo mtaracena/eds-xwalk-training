@@ -10,16 +10,52 @@ async function fetchData(url) {
   return response.json();
 }
 
+function sortData(data, orderBy, sort) {
+  if (orderBy === 'title') {
+    data.sort((a, b) => {
+      const titleA = a.title.toUpperCase();
+      const titleB = b.title.toUpperCase();
+      if (titleA < titleB) {
+        return sort === 'asc' ? -1 : 1;
+      }
+      if (titleA > titleB) {
+        return sort === 'asc' ? 1 : -1;
+      }
+      return 0;
+    });
+  } else {
+    data.sort((a, b) => {
+      const dateA = new Date(a.lastModified);
+      const dateB = new Date(b.lastModified);
+      if (dateA < dateB) {
+        return sort === 'asc' ? -1 : 1;
+      }
+      if (dateA > dateB) {
+        return sort === 'asc' ? 1 : -1;
+      }
+      return 0;
+    });
+  }
+
+  return data;
+}
+
 export default function decorate(block) {
   console.log('dynamic-cards', block);
   const source = block.querySelector('a[href]') ? block.querySelector('a[href]').href : '/query-index.json';
+  const maxItems = block.querySelector('div:nth-child(2)').querySelector('div')?.textContent;
+  const orderBy = block.querySelector('div:nth-child(3)').querySelector('div')?.textContent;
+  const sort = block.querySelector('div:nth-child(4)').querySelector('div')?.textContent;
+
+  console.log('props', [maxItems, orderBy, sort]);
+
   block.innerHTML = '';
   const ul = document.createElement('ul');
 
   fetchData(source).then((data) => {
     console.log('data', data);
 
-    data.data.forEach((item) => {
+    sortData(data.data, orderBy, sort).slice(0,maxItems).forEach((item) => {
       const li = document.createElement('li');
       const imageDiv = document.createElement('div');
       imageDiv.setAttribute('class', 'cards-card-image');
