@@ -200,7 +200,8 @@
                 "template": {
                   "name": "Dynamic Cards",
                   "model": "dynamic-cards",
-                  "source": "#"
+                  "source": "/query-index.json",
+                  "maxitems": "10"
                 }
               }
             }

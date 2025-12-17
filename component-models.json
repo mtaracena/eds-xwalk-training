@@ -277,7 +277,49 @@
          "name": "source",
          "label": "Source",
          "value": ""
-       }
+       },
+       {
+         "component": "text",
+         "valueType": "number",
+         "name": "Max Items",
+         "label": "maxitems",
+         "value": "10"
+       },
+       {
+        "component": "select",
+        "name": "orderby",
+        "value": "Last Modified",
+        "label": "Order By",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Last Modified",
+            "value": "lastModified"
+          },
+          {
+            "name": "Title",
+            "value": "title"
+          }
+        ]
+      }
+      ,
+       {
+        "component": "select",
+        "name": "sortorder",
+        "value": "Descending",
+        "label": "Sort Order",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Descending",
+            "value": "desc"
+          },
+          {
+            "name": "Ascending",
+            "value": "asc"
+          }
+        ]
+      }
      ]
   }
 ]
