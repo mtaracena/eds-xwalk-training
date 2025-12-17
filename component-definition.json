@@ -201,7 +201,9 @@
                   "name": "Dynamic Cards",
                   "model": "dynamic-cards",
                   "source": "/query-index.json",
-                  "maxitems": "10"
+                  "maxitems": "10",
+                  "orderby": "lastModified",
+                  "sortorder": "desc"
                 }
               }
             }

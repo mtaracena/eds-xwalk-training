@@ -281,14 +281,14 @@
        {
          "component": "text",
          "valueType": "number",
-         "name": "Max Items",
-         "label": "maxitems",
+         "name": "maxitems",
+         "label": "Max Items",
          "value": "10"
        },
        {
         "component": "select",
         "name": "orderby",
-        "value": "Last Modified",
+        "value": "lastModified",
         "label": "Order By",
         "valueType": "string",
         "options": [
@@ -306,7 +306,7 @@
        {
         "component": "select",
         "name": "sortorder",
-        "value": "Descending",
+        "value": "desc",
         "label": "Sort Order",
         "valueType": "string",
         "options": [
