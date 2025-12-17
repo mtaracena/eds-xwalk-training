@@ -267,5 +267,17 @@
          "value": "#"
        }
      ]
+  },
+  {
+    "id": "dynamic-cards",
+    "fields": [
+       {
+         "component": "text",
+         "valueType": "string",
+         "name": "source",
+         "label": "Source",
+         "value": ""
+       }
+     ]
   }
 ]
